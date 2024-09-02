@@ -35,9 +35,11 @@ window.addEventListener('keydown', (e) => {
   }
   if (e.key === 'ArrowLeft') {
     dog.move('left')
+    // bg.goLeft()
   }
   if (e.key === 'ArrowRight') {
     dog.move('right')
+    // bg.goRight()
   }
 })
 window.addEventListener('keyup', () => {

@@ -1,15 +1,15 @@
 export class Background {
-  constructor(canvas, folderPaths, imageCounts, positions) {
+  constructor(canvas) {
     this.canvas = canvas;
     this.groups = new fabric.Group([]);
     this.folderPaths = Array.from({ length: 8 }, (_, i) => `../backImage/clouds${i + 1}`);
-    this.imageCounts = [4, 4, 4, 4, 5, 6, 4, 6];
+    this.imageCounts = [5, 4, 4, 4, 6, 4, 6, 4];
     this.initBackgrounds();
   }
-
+// 宽为572
   initBackgrounds() {
     this.folderPaths.forEach((folderPath, index) => {
-      this.createBackground(folderPath, this.imageCounts[index], 1440 * index);
+      this.createBackground(folderPath, this.imageCounts[index], 1152 * index);
     });
   }
 
@@ -27,7 +27,7 @@ export class Background {
     }
 
     Promise.all(imgArr).then(images => {
-      const group = new fabric.Group(images, { opacity: 0.8, scaleX: 2.5, scaleY: 2 });
+      const group = new fabric.Group(images, { scaleX: 2, scaleY: 1.8 });
       this.canvas.add(group);
       this.canvas.sendBackwards(group);
       this.groups.addWithUpdate(group);
@@ -39,7 +39,7 @@ export class Background {
       if (this.groups.length === 0) {
         return;
       }
-      this.groups.animate('left', -10300, {
+      this.groups.animate('left', -8216, {
         onChange: this.canvas.renderAll.bind(this.canvas),
         duration: 30000,
         easing: fabric.util.ease.linear,
@@ -51,5 +51,12 @@ export class Background {
     };
     requestAnimationFrame(animate);
   };
+
+  goLeft(){
+    this.groups.set('left', this.groups.left + 10)
+  }
+  goRight(){
+    this.groups.set('left', this.groups.left - 10)
+  }
 
 }
