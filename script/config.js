@@ -85,4 +85,4 @@ export const directions = {
     condition: (img) => img.top < border.borderBottom,
     increment: 10
   }
-}; 
+};

@@ -12,8 +12,6 @@ export class Dog {
     this.moveFlag = false;
   }
 
-
-
   toggleCrop() {
     this.currentIndex++
     if (this.currentIndex === config[this.movement].count - 1) {
