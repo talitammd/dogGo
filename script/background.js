@@ -2,9 +2,8 @@ export class Background {
   constructor(canvas, folderPaths, imageCounts, positions) {
     this.canvas = canvas;
     this.groups = new fabric.Group([]);
-    this.folderPaths = Array.from({ length: 8 }, (_, i) => `../clouds${i + 1}`);
+    this.folderPaths = Array.from({ length: 8 }, (_, i) => `../backImage/clouds${i + 1}`);
     this.imageCounts = [4, 4, 4, 4, 5, 6, 4, 6];
-
     this.initBackgrounds();
   }
 
@@ -51,7 +50,6 @@ export class Background {
 
     };
     requestAnimationFrame(animate);
-
   };
 
 }
