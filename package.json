@@ -1,0 +1,23 @@
+{
+  "name": "canvas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "npm run build && lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/fabric": "^5.3.8",
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "fabric": "^6.3.0",
+    "systemjs": "^0.19.47",
+    "typescript": "^2.8.3"
+  }
+}
